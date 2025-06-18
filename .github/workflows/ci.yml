@@ -12,7 +12,8 @@
 
       strategy:
         matrix:
-          node-version: '22'
+          node-version:
+            - '22'
 
       services:
         postgres:
