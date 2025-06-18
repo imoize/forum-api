@@ -13,5 +13,5 @@
       steps:
       - name: Deploy app via webhook
         run: |
-          curl -X POST ${{ secrets.DEPLOY_SERVER_URL }}/deploy \
+          curl -X POST "${{ secrets.DEPLOY_SERVER_URL }}" \
             -H "X-API-Token: ${{ secrets.DEPLOY_TOKEN }}"
