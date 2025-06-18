@@ -1,0 +1,17 @@
+  name: Continuous Deployment
+
+  on:
+    workflow_dispatch:
+    push:
+      branches:
+        - main
+
+  jobs:
+    deploy:
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Deploy app via webhook
+        run: |
+          curl -X POST ${{ secrets.DEPLOY_SERVER_URL }}/deploy \
+            -H "X-API-Token: ${{ secrets.DEPLOY_TOKEN }}"
